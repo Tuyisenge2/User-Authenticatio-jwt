@@ -54,7 +54,6 @@ try{
         if (! $token = auth()->attempt($credentials)) {
             return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
         }
-       echo auth()->attempt($credentials);
        $success = $this->respondWithToken($token);
        return $this->sendResponse($success, 'User login successfully.');
 }
@@ -68,7 +67,7 @@ try{
     {
         $success = auth()->user();
    
-        return $this->sendResponse($success, 'Refresh token return successfully.');
+        return $this->sendResponse($success, 'User Profile return successfully.');
     }
   
     /**
